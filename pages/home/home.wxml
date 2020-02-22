@@ -2,5 +2,5 @@
 <!-- <text>pages/home/home.wxml</text> -->
 <view>
  <swiper></swiper>
- <view></view>
+ <view>测试</view>
 </view>
