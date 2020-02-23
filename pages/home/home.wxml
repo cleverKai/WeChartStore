@@ -2,11 +2,26 @@
 <!-- <text>pages/home/home.wxml</text> -->
 <view>
  <swiper indicator-dots="true" autoplay="true" current="0" class="swiper">
-   <block wx:for='{{ bannerArr }}'>
+   <block wx:for="{{ bannerArr }}" wx:key="key">
      <swiper-item class="banner-item">
-       <image src="{{item.img.url}}"></image>
+       <image src="{{item.img.url}}" mode="aspectFill" class="item-image"></image>
      </swiper-item>
    </block>
  </swiper>
- <view>测试</view>
+ <view class="home-main">
+   <view class="home-main-theme">
+     <view class="home-main-header">精选主题</view>
+     <view class="theme-box">
+       <block wx:for="{{ themeArr }}" wx:key="key">
+         <view wx:if="{{index==2}}" class="theme-item big">
+           <image src="{{ item.topic_img.url }}"></image>
+         </view>
+         <view wx:else class="theme-item">
+         <image src="{{ item.topic_img.url }}"></image></view>
+          <!-- <image src="{{ item.topic_img.url }}"></image> -->
+       </block>
+     </view>
+   </view>
+   <view class="home-main-prodicts"></view>
+ </view>
 </view>

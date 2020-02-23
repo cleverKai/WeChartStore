@@ -16,17 +16,20 @@ Page({
   //处理具体的业务
   _loadData:function(){
     var id = 1;
-    var data = home.getBannerData(id,(res)=>{
+    home.getBannerData(id,(res)=>{
       console.log(res);
       // 数据绑定
       this.setData({
         'bannerArr':res
       });
     });
+    // 获取主题数据
+    home.getThemeData((res) =>{
+      this.setData({
+        'themeArr': res
+      });
+    });
   },
-  // callBack:function(res){
-  //   console.log(res);
-  // }
 
 
 })

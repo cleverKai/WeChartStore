@@ -11,15 +11,17 @@ class Home extends Base{
       }
     };
     this.request(params);
-    // wx.request({
-    //   url: 'http://z.cn/api/v1/banner/'+id,
-    //   method: 'GET',
-    //   success:function(res){
-    //     // console.log(res);
-    //     // return res;
-    //     callBack(res);
-    //   }
-    // })
+   
+  }
+  //获取首页主题数据
+  getThemeData(callBack){
+    var params = {
+      url: 'theme?ids=1,2,3',
+      sCallBack:function(data){
+        callBack && callBack(data); 
+      }
+    };
+    this.request(params);
   }
 }
 
