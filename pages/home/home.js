@@ -18,6 +18,10 @@ Page({
     var id = 1;
     var data = home.getBannerData(id,(res)=>{
       console.log(res);
+      // 数据绑定
+      this.setData({
+        'bannerArr':res
+      });
     });
   },
   // callBack:function(res){

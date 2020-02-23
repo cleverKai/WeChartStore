@@ -18,7 +18,7 @@ class Base{
       },
       success:function(res){
         if(params.sCallBack){
-          params.sCallBack(res);
+          params.sCallBack(res.data);
        }
 
       },
@@ -28,3 +28,5 @@ class Base{
     })
   }
 }
+
+export { Base };
