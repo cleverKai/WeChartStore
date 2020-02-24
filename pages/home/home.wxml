@@ -1,6 +1,7 @@
 <!--pages/home/home.wxml-->
 <!-- <text>pages/home/home.wxml</text> -->
 <view>
+ <!-- 首页轮播图 -->
  <swiper indicator-dots="true" autoplay="true" current="0" class="swiper">
    <block wx:for="{{ bannerArr }}" wx:key="key">
      <swiper-item class="banner-item">
@@ -8,7 +9,9 @@
      </swiper-item>
    </block>
  </swiper>
+ <!-- 首页主体部分 -->
  <view class="home-main">
+   <!-- 精选主题部分 -->
    <view class="home-main-theme">
      <view class="home-main-header">精选主题</view>
      <view class="theme-box">
@@ -22,6 +25,8 @@
        </block>
      </view>
    </view>
-   <view class="home-main-prodicts"></view>
+   <view class="home-main-prodicts">
+     
+   </view>
  </view>
 </view>

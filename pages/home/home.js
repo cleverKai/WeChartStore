@@ -17,7 +17,7 @@ Page({
   _loadData:function(){
     var id = 1;
     home.getBannerData(id,(res)=>{
-      console.log(res);
+      // console.log(res);
       // 数据绑定
       this.setData({
         'bannerArr':res
