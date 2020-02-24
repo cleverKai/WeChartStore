@@ -27,6 +27,10 @@ class Base{
       }
     })
   }
+  // 获取元素上绑定的值
+  getDataSet(even,key){
+    return even.currentTarget.dataset[key];
+  }
 }
 
 export { Base };

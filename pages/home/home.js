@@ -38,5 +38,18 @@ Page({
     });
   },
 
+  onProductsItemTap(event){
+    var id = home.getDataSet(event,'id');
+    wx.navigateTo({
+      url: '../products/products?id=' + id,
+    })
 
+  },
+  onThemesItemTap(event){
+    var id  = home.getDataSet(event,'id');
+    var name = home.getDataSet(event,'name');
+    wx.navigateTo({
+      url: '../theme/theme?id=' + id + '&name=' + name,
+    })
+  }
 })

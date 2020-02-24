@@ -1,11 +1,11 @@
 <!--pages/home/home.wxml-->
 <!-- <text>pages/home/home.wxml</text> -->
 <import src="../tpls/products/products-tpl.wxml"/>
-<view>
+<view class="container">
  <!-- 首页轮播图 -->
  <swiper indicator-dots="true" autoplay="true" current="0" class="swiper">
    <block wx:for="{{ bannerArr }}" wx:key="key">
-     <swiper-item class="banner-item">
+     <swiper-item class="banner-item" data-id="{{ item.key_word }}" bindtap="onProductsItemTap">
        <image src="{{item.img.url}}" mode="aspectFill" class="item-image"></image>
      </swiper-item>
    </block>
@@ -17,10 +17,10 @@
      <view class="home-main-header">精选主题</view>
      <view class="theme-box">
        <block wx:for="{{ themeArr }}" wx:key="key">
-         <view wx:if="{{index==2}}" class="theme-item big">
+         <view wx:if="{{index==2}}" class="theme-item big" data-id="{{ item.id }}" data-name="{{ item.name }}" bindtap="onThemesItemTap">
            <image src="{{ item.topic_img.url }}"></image>
          </view>
-         <view wx:else class="theme-item">
+         <view wx:else class="theme-item"  data-id="{{ item.id }}" data-name="{{ item.name }}" bindtap="onThemesItemTap">
          <image src="{{ item.topic_img.url }}"></image></view>
           <!-- <image src="{{ item.topic_img.url }}"></image> -->
        </block>
