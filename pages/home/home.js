@@ -29,6 +29,13 @@ Page({
         'themeArr': res
       });
     });
+    // 获取首页商品数据
+    home.getProductsData((res) =>{
+      console.log(res);
+      this.setData({
+        'productsArr':res
+      });
+    });
   },
 
 

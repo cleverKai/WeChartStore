@@ -1,5 +1,6 @@
 <!--pages/home/home.wxml-->
 <!-- <text>pages/home/home.wxml</text> -->
+<import src="../tpls/products/products-tpl.wxml"/>
 <view>
  <!-- 首页轮播图 -->
  <swiper indicator-dots="true" autoplay="true" current="0" class="swiper">
@@ -26,7 +27,8 @@
      </view>
    </view>
    <view class="home-main-prodicts">
-     
+      <view class="home-main-header">最近新品</view>
+      <template is="products" data="{{ products:productsArr }}"></template>
    </view>
  </view>
 </view>

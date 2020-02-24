@@ -23,6 +23,16 @@ class Home extends Base{
     };
     this.request(params);
   }
+  // 获取首页商品数据
+  getProductsData(callBack){
+    var params = {
+      url: 'product/recent',
+      sCallBack:function(data){
+        callBack && callBack(data)
+      }
+    };
+    this.request(params);
+  }
 }
 
 export {Home};

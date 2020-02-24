@@ -26,8 +26,8 @@
   color: #333;
 }
 .products-item-bottom .name{
-  font-size: 28rpx;
+  font-size: 30rpx;
 }
 .products-item-bottom .price{
-  font-size: 24rpx;
+  font-size: 28rpx;
 }
