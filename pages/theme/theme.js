@@ -1,4 +1,6 @@
 // pages/theme/theme.js
+import { Theme } from './theme-model.js';
+var theme = new Theme();
 Page({
 
   /**
@@ -14,7 +16,17 @@ Page({
   onLoad: function (options) {
     var id = options.id;
     var name = options.name;
-    console.log(id,name);
+    this.data.id = id;
+    this.data.name = name;
+    this._loadData();
   },
+  _loadData(){
+    theme.getProductsData(this.data.id,(data) =>{
+      this.setData({
+        "themeInfo":data
+      });
+      console.log(data);
+    });
+  }
 
 })
