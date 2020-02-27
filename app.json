@@ -10,7 +10,6 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#AB956D",
-    "navigationBarTitleText": "校园商贩",
     "navigationBarTextStyle": "white",
     "enablePullDownRefresh": false
   },
