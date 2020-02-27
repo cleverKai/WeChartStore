@@ -42,6 +42,25 @@
         </view>
       </block>
     </view>
-    <view class="product-detail-box"></view>
+    <view class="product-detail-box">
+    <!-- 商品详情 -->
+      <view wx:if="{{currentTabsIndex=== 0}}" class="product-detail-imgs">
+        <block wx:for="{{product.imgs}}" wx:key="key">
+          <image src="{{ item.img_url.url }}" mode="aspectFill"></image>
+        </block>
+      </view>
+      <!-- 商品参数 -->
+      <view wx:if="{{currentTabsIndex=== 1}}" class="product-detail-properties">
+        <block wx:for="{{ product.properties }}"  wx:key="key">
+          <view class="properties-item">
+            <view class="properties-name">{{ item.name }}</view>
+            <view class="properties-detail">{{ item.detail }}</view>
+          </view>
+        </block>
+      </view>
+      <view wx:if="{{currentTabsIndex=== 2}}" class="product-detail-protect">
+          <view>七天无理由免费退货</view>
+      </view>
+    </view>
   </view>
 </view>
