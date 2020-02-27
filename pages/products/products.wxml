@@ -12,10 +12,19 @@
     </view>
     <view class="cart-box">
       <view class="product-counts">
-        <picker range="{{ countsArray }}"></picker>
+        <picker class="{{ product.stock==0?'disabled':''}}" range="{{countsArray}}" bindchange="bindPickerChange">
+          <view>
+          <text class="counts-tips">数量</text>
+          <text class="counts-data">{{productCounts}}</text>
+          <image class="counts-icon" src="../../imgs/icon/arrow@down.png"></image>
+          </view>
+        </picker>
       </view>
       <view class="middle-border"></view>
-      <view class="add-cart-btn"></view>
+      <view class="add-cart-btn">
+        <text class="">加入购物车</text>
+        <image  class="cart-icon" src="../../imgs/icon/cart.png"></image>
+      </view>
     </view>
     <view class="basic-info-box"></view>
   </view>

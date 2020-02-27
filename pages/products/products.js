@@ -9,6 +9,7 @@ Page({
   data: {
     id:null,
     countsArray:[1,2,3,4,5,6,7,8,9,10],
+    productCounts:1
   },
 
   /**
@@ -17,7 +18,7 @@ Page({
   onLoad: function (options) {
     var id = options.id;
     this.data.id = id;
-    console.log(id);
+    // console.log(id);
     this._loadData();
   },
   onReady(){
@@ -27,10 +28,17 @@ Page({
   },
   _loadData(){
     product.getDetailInfo(this.data.id,(data)=>{
-      console.log(data);
+      // console.log(data);
       this.setData({
         'product':data
       });
+    });
+  },
+  bindPickerChange(event){
+    var index = event.detail.value;
+    var selected = this.data.countsArray[index];
+    this.setData({
+      'productCounts': selected
     });
   }
 
