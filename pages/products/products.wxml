@@ -26,7 +26,12 @@
         <image  class="cart-icon" src="../../imgs/icon/cart.png"></image>
       </view>
     </view>
-    <view class="basic-info-box"></view>
+    <view class="basic-info-box">
+      <view class="stock" wx:if="{{product.stock>0}}">有货</view>
+      <view class="stock no" wx:else>缺货</view>
+      <view class="name">{{ product.name }}</view>
+      <view class="price">￥{{product.price}}</view>
+    </view>
   </view>
 
   <view class="detail-bottom-box"></view>
