@@ -34,5 +34,14 @@
     </view>
   </view>
 
-  <view class="detail-bottom-box"></view>
+  <view class="detail-bottom-box">
+    <view class="tabs-box">
+      <block wx:for="{{['商品详情','产品参数','售后保障']}}" wx:key="key">
+        <view class="tabs-item {{currentTabsIndex===index?'selected':''}}" bindtap="onTabsItemTap" data-index="{{index}}">
+        {{item}}
+        </view>
+      </block>
+    </view>
+    <view class="product-detail-box"></view>
+  </view>
 </view>

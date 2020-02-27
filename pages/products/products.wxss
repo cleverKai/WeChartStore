@@ -165,6 +165,7 @@
 /*商品详情*/
 .detail-bottom-box{
   margin-top: 30rpx;
+  width: 100%;
 }
 .tabs-box{
   height: 90rpx;

@@ -9,7 +9,8 @@ Page({
   data: {
     id:null,
     countsArray:[1,2,3,4,5,6,7,8,9,10],
-    productCounts:1
+    productCounts:1,
+    currentTabsIndex:0
   },
 
   /**
@@ -39,6 +40,12 @@ Page({
     var selected = this.data.countsArray[index];
     this.setData({
       'productCounts': selected
+    });
+  },
+  onTabsItemTap(event){
+    var index = product.getDataSet(event, 'index');
+    this.setData({
+      'currentTabsIndex':index
     });
   }
 
