@@ -1,13 +1,18 @@
 <!--pages/category/category.wxml-->
+<import src="../tpls/category/category-tpl.wxml"/>
 <view class="container category-container" >
   <view class="category-box">
    <view class="left-box">
       <block wx:for="{{categoryTypeArr}}" wx:key="key">
-        <view class="menu-item">
+        <view class="menu-item" bindlongtap="">
           {{item.name}}
         </view>
       </block>
    </view>
-   <view class="right-box"></view>
+   <view class="right-box">
+      <view class="foods-type-box">
+        <template is="categorydetail" data="{{categoryInfo:categoryProducts}}"></template>
+      </view>
+   </view>
   </view>
 </view>
