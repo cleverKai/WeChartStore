@@ -30,7 +30,7 @@ class Cart  extends Base{
   */
   getCartDataFromLocal(){
     var res = wx.getStorageSync(this._storageKeyName);
-    if(res){
+    if(!res){
       res = [];
     }
     return res; 
@@ -51,7 +51,5 @@ class Cart  extends Base{
     return result;
   }
 }
-
-
 
 export { Cart };
