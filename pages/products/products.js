@@ -35,6 +35,7 @@ Page({
       // console.log(data);
       this.data.product = data;
       this.setData({
+        'cartTotalCounts': cart.getCartTotalCounts(),
         'product':data
       });
     });
@@ -55,7 +56,6 @@ Page({
   //添加购物车
   onAddingToCartTap(event){
     this.addToCart();
-    console.log('cart');
   },
   addToCart(){
     var productObj = {};

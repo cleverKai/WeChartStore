@@ -35,6 +35,15 @@ class Cart  extends Base{
     }
     return res; 
   }
+  // 获取购物车里面所有商品的数量
+  getCartTotalCounts(){
+    var data = this.getCartDataFromLocal();
+    var cartCoints = 0;
+    for(let i=0; i<data.length;i++){
+      cartCoints = cartCoints + data[i].counts;
+    }
+    return cartCoints;
+  }
    /*
    *判断某个商品是否已经添加到购物车中，并且返回这个商品的数据，以及所在数组中的位置
    */ 
