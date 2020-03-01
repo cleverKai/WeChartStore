@@ -39,7 +39,7 @@
   text-align: center;
 }
 .fiexd-cart.animate{
-  animation: aCartScale 200ms cubic-bezier(.17,.67,.83,.67);
+  animation: aCartScale 500ms cubic-bezier(.17,.67,.83,.67);
   animation-fill-mode: backwards;
 }
 
