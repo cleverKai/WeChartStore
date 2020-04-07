@@ -61,11 +61,11 @@ Page({
       return;
     }
     this._flyToCartEffect(event);
-    this.addToCart();
     var counts = this.data.cartTotalCounts + this.data.productCounts;
     this.setData({
       cartTotalCounts: cart.getCartTotalCounts()
     });
+    this.addToCart();
   },
   addToCart(){
     var productObj = {};
