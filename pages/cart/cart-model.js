@@ -57,9 +57,21 @@ class Cart  extends Base{
    /*
    *判断某个商品是否已经添加到购物车中，并且返回这个商品的数据，以及所在数组中的位置
    */ 
-  _isHasThatOne(id,arr){
-    var item,
-        result={index:-1};
+  // _isHasThatOne(id,arr){
+  //   var item;
+  //   var result = { index:-1 };
+  //   for(let i=0; i<arr.length;i++){
+  //     item = arr[i];
+  //     if(item.id == id){
+  //       result ={ index:i,data:item }
+  //     };
+  //     break;
+  //   }
+  //   return result;
+  // }
+   /*购物车中是否已经存在该商品*/
+   _isHasThatOne(id,arr){
+    var item,result={index:-1};
     for(let i=0;i<arr.length;i++){
         item=arr[i];
         if(item.id==id) {
