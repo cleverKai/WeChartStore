@@ -127,7 +127,7 @@
   margin: 0 20rpx;
 }
 .counts-data{
-  font-size: 28rpx;
+  font-size: 30rpx;
 }
 .counts-icon{
   height: 48rpx;
