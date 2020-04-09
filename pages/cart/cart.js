@@ -113,5 +113,14 @@ Page({
    }
    this.data.cartData[index].counts += counts;
    this._resetCartData();
+  },
+  // 删除购物车商品
+  delete:function (event) {
+    let id = cart.getDataSet(event,'id');
+    let index = this._getProductIndexById(id);
+    this.data.cartData.splice(index,1);
+    this._resetCartData();
+    cart.delete(id);//删除缓存里面的商品信息
+    
   }
 })
