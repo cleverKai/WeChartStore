@@ -56,5 +56,40 @@ Page({
         selectedTypeCounts:selectedTypeCounts,
         account:account/(multiple*multiple)
       }
-  }
+  },
+  toggleSelect:function(event){
+    // console.log(this.data.cartData);
+    // 获取当前缓存中商品的id和选择状态
+    var id = cart.getDataSet(event,'id');
+    var status = cart.getDataSet(event,'status');
+    var index = this._getProductIndexById(id);
+    // 当点击checkbox时，将该商品的选择状态取反
+    this.data.cartData[index].selectStatus = !status;
+    this._resetCartData();
+  },
+  //重置购物车数据
+  _resetCartData:function(){
+    //重新计算总金额和商品总数
+    var newData = this._calcTotalAccountAndCounts(this.data.cartData);
+    // 重新进行页面数据的绑定
+    this.setData({
+      account:newData.account,
+      selectedCounts:newData.selectedCounts,
+      selectedTypeCounts:newData.selectedTypeCounts,
+      cartData:this.data.cartData
+    });
+  },
+  toggleSelectAll:function(event){
+
+  },
+  //根据商品id得到商品所在下标
+  _getProductIndexById:function(id){
+    var data = this.data.cartData;
+    var len = data.length;
+    for(let i=0;i<len;i++){
+      if(data[i].id == id ){
+        return i;
+      }
+    }
+  },
 })
