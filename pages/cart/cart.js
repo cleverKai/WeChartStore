@@ -80,7 +80,14 @@ Page({
     });
   },
   toggleSelectAll:function(event){
-
+    // console.log("cart");
+    let status = cart.getDataSet(event,'status') == 'true';
+    let data = this.data.cartData;
+    let len = data.length;
+    for(let i=0;i<len;i++){
+      data[i].selectStatus = !status;
+    }
+    this._resetCartData();
   },
   //根据商品id得到商品所在下标
   _getProductIndexById:function(id){
@@ -92,4 +99,19 @@ Page({
       }
     }
   },
+  //商品数量减1
+  changeCounts:function(event){
+   let id = cart.getDataSet(event,'id');
+   let type = cart.getDataSet(event,'type');
+   let index = this._getProductIndexById(id);
+   let counts = 1;
+   if(type == "add"){
+      cart.addCounts(id);
+   } else{
+     counts = -1;
+     cart.cutCounts(id);
+   }
+   this.data.cartData[index].counts += counts;
+   this._resetCartData();
+  }
 })
